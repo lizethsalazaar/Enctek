@@ -1,0 +1,120 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from 'astro:assets';
+import Img1 from '@images/img1.png'
+---
+
+<section class="powering">
+    <div class="powering__container">
+        <div class="powering__information">
+            <div class="powering__trusted">
+                <h1 class="powering__trusted-text">Más de 500 empresas de todo el mundo confían en nosotros.</h1>
+            </div>
+            <h1 class="powering__title">Impulsando el Crecimiento a través de 
+                <span class="powering__span-solutions">Soluciones de</span> 
+                <span class="powering__span-communication">Comunicación</span> 
+                Integradas
+            </h1>
+            <p class="powering__text">Mejore la experiencia de sus clientes y optimice sus operaciones con nuestros servicios integrales de centro de llamadas, marketing por correo electrónico y software personalizado. Transforme su negocio con tecnología de vanguardia y asistencia de expertos.</p>
+            <div class="powering__buttons">
+                <button class="powering__button-request">Solicitar  una demostración</button>
+                <button class="powering__button-schedule">Programar una llamada</button>
+            </div>
+            <div class="powering__options">
+                <div class="powering__customers">
+                    <h1 class="powering__title-customer">30%</h1>
+                    <h2 class="powering__option-subtitle">Satisfacción del cliente</h2>
+                </div>
+                <div class="powering__customers">
+                    <h1 class="powering__title-lead">2x</h1>
+                    <h2 class="powering__option-subtitle">Aumento de la generación de clientes potenciales</h2>
+                </div>
+                <div class="powering__customers">
+                    <h1 class="powering__title-operational">45%</h1>
+                    <h2 class="powering__option-subtitle">Eficiencia operativa</h2>
+                </div>
+            </div>
+        </div>
+        <div class="powering__image">
+            <Image src={Img1} alt="statistics" />
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.powering{
+    @apply w-full;
+
+    &__container{
+        @apply bg-bg grid grid-cols-2 p-16;
+    }
+
+    &__trusted{
+        @apply bg-bg-trusted w-fit px-8 py-2 rounded-3xl mb-10;
+    }
+
+    &__trusted-text{
+        @apply text-trusted text-sm font-semibold;
+    }
+
+    &__title{
+        @apply text-7xl font-[950] mb-10;
+    }
+
+    &__span-solutions{
+        @apply text-span-communication;
+    }
+
+    &__span-communication{
+        @apply text-span-solution;
+    }
+
+    &__text{
+        @apply text-xl text-subtitle font-medium mb-8;
+    }
+
+    &__buttons{
+        @apply grid grid-cols-[3fr_3fr_1fr] gap-2 font-bold mb-8;
+    }
+
+    &__button-request{
+        @apply py-4 rounded-4xl bg-span-communication border border-none text-white cursor-pointer text-base;
+    }
+
+    &__button-schedule{
+        @apply py-4 rounded-4xl bg-bg border-2 border-gray-400 cursor-pointer text-base;
+    }
+
+    &__options{
+        @apply grid grid-cols-3;
+    }
+
+    &__customers{
+        @apply text-center;
+    }
+
+    &__title-customer{
+        @apply text-3xl font-bold text-span-communication;
+    }
+
+     &__title-lead{
+        @apply text-3xl font-bold text-lead; 
+    }
+
+     &__title-operational{
+        @apply text-3xl font-bold text-span-solution;
+    }
+
+    &__option-subtitle{
+        @apply text-base text-gray-500 font-medium;
+    }
+
+    &__image{
+        @apply  items-center transform translate-y-5;
+    }
+
+}
+
+</style>
