@@ -1,0 +1,1 @@
+export { default as CardWhat} from './what_card.astro'

@@ -1,0 +1,74 @@
+---
+import StarIcon from '@icons/star.svg';
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  image: ImageMetadata;
+  name: string;
+  position: string;
+  comment: string;
+}
+
+const { image, name, position, comment } = Astro.props;
+---
+
+<article class="what">
+  <div class="what__target">
+    <div class="what__person">
+      <div class="what__image-person">
+        <Image src={image} alt={name} />
+      </div>
+      <div class="what__information-person">
+        <h2 class="what__person-subtitle">{name}</h2>
+        <p class="what__person-text">{position}</p>
+      </div>
+    </div>
+    <div class="what__icon">
+      <StarIcon class="size-5 text-yellow-500" />
+      <StarIcon class="size-5 text-yellow-500" />
+      <StarIcon class="size-5 text-yellow-500" />
+      <StarIcon class="size-5 text-yellow-500" />
+      <StarIcon class="size-5 text-yellow-500" />
+    </div>
+    <div class="what__information-target">
+      <p class="what__text-target">{comment}</p>
+    </div>
+  </div>
+</article>
+
+<style lang="scss">
+  @reference '@styles/global';
+
+  .what {
+    &__target {
+      @apply p-6 rounded-xl shadow-lg bg-bg h-full;
+    }
+
+    &__person {
+      @apply grid grid-cols-[1.5fr_7fr];
+    }
+
+    &__person-subtitle {
+      @apply text-base font-semibold text-title;
+    }
+
+    &__person-text {
+      @apply text-subtitle text-sm;
+    }
+
+    &__icon{
+      @apply grid grid-cols-16  py-4;
+    }
+
+    &__subtitle {
+      @apply text-xl font-semibold text-subtitle mb-2;
+    }
+
+    &__text-target {
+      @apply text-title text-base italic font-medium;
+    }
+  }
+</style>
+
+
