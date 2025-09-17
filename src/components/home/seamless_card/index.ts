@@ -1,0 +1,1 @@
+export { default as CardSeamless} from './seamless_card.astro'
