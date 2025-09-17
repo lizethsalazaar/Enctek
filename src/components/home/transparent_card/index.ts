@@ -1,0 +1,1 @@
+export { default as CardTransparent} from './transparent_card.astro'

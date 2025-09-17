@@ -1,0 +1,70 @@
+---
+import { CardFrequently } from "./frequently_card";
+import CheckIcon from '@icons/check.svg';
+
+const missionData = [
+    {
+        text: "¿Cuánto tiempo tardamos en empezar a utilizar ConnectPro?",
+        icon: CheckIcon,
+    },
+    {
+        text: "¿Ofrecemos integraciones con los sistemas CRM existentes?",
+        icon: CheckIcon,
+    },
+    {
+        text: "¿Qué tipo de asistencia técnica ofrecemos?",
+        icon: CheckIcon,
+    },
+    {
+        text: "¿Puedo personalizar las soluciones de software según mis necesidades específicas?",
+        icon: CheckIcon,
+    },
+    {
+        text: "¿Qué medidas de seguridad tenemos implementadas?",
+        icon: CheckIcon,
+    },
+    {
+        text: "¿Ofrecemos formación para nuestro equipo?",
+        icon: CheckIcon,
+    },
+]
+---
+
+<section class="frequently">
+    <div class="frequently__container">
+        <div class="frequently__information">
+            <h1 class="frequently__title">Preguntas Frecuentes</h1>
+            <h2 class="frequently__subtitle">Encuentre respuestas a las preguntas más comunes sobre nuestras soluciones integradas y cómo pueden beneficiar a su empresa.</h2>
+        </div>
+        <div class="frequently__cards">
+              {missionData.map((card) => ( <CardFrequently {...card}/>))}	
+        </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.frequently{
+    @apply w-full;
+
+    &__container{
+        @apply bg-bg p-16;
+    }
+
+    &__information{
+        @apply text-center md:px-40 mb-14;
+    }
+
+    &__title{
+        @apply text-title md:text-5xl font-bold mb-6;
+    }
+
+    &__subtitle{
+        @apply text-subtitle text-xl font-medium;
+    }
+
+    &__cards{
+        @apply md:px-40;
+    }
+}
+</style>
