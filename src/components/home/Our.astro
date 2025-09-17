@@ -1,0 +1,89 @@
+---
+import { CardOurs } from "./ours_card";
+import Image1 from '@images/img4.png';
+import Image2 from '@images/img2.png';
+import Image3 from '@images/img3.png';
+import HeadphonesIcon from '@icons/headphones.svg';
+import PaymentsIcon from '@icons/payments.svg';
+import DataIcon from '@icons/database.svg';
+
+const missionData = [
+    {
+        icon: HeadphonesIcon,
+        title: "Experiencias Excepcionales en Centros de Atención Telefónica",
+        text: "Proporcione una atención al cliente fluida con nuestras soluciones avanzadas para centros de llamadas. Ofrecemos disponibilidad 24/7, asistencia multicanal y análisis en tiempo real para optimizar sus interacciones con los clientes.",
+        option1: "Respuesta de Voz Interactiva.",
+        option2: "Enrutamiento Inteligente de Llamadas.",
+        option3: "Informes y Análisis en Tiempo Real.",
+        option4: "Equipo de Asistencia Dedicado.",
+        option5: "Integración Omnicanal.",
+        image: Image1,
+        button: "Más Información Sobre el Centro de Llamadas",
+    },
+    {
+        icon: PaymentsIcon,
+        title: "Marketing por Correo Electrónico Basado en Datos",
+        text: "Maximice su alcance y compromiso con nuestros servicios estratégicos de marketing por correo electrónico. Diseñamos, implementamos y gestionamos campañas que generan resultados medibles y un retorno de la inversión.",
+        option1: "Segmentación Avanzada",
+        option2: "Personalización Dinámica",
+        option3: "Automatización del Marketing",
+        option4: "Pruebas A/B y Optimización",
+        option5: "Seguimiento del Rendimiento",
+        image: Image2,
+        button: "Explore el Marketing por Correo Electrónico",
+    },
+    {
+        icon: DataIcon,
+        title: "Soluciones de Software Personalizadas",
+        text: "Desarrolle aplicaciones de software innovadoras que se adapten perfectamente a las necesidades específicas de su negocio. Nuestros desarrolladores expertos crean soluciones escalables, eficientes y seguras.",
+        option1: "Desarrollo Personalizado de CRM.",
+        option2: "Automatización de Procesos Empresariales.",
+        option3: "Desarrollo de Aplicaciones Móviles.",
+        option4: "Soluciones en la Nube.",
+        option5: "Integración de API.",
+        image: Image3,
+        button: "Descubra Soluciones de Software",
+    },
+]
+---
+
+<section class="our">
+    <div class="our__container">
+        <div class="our__information">
+            <h1 class="our__title">Nuestra Suite de Servicios Integrales</h1>
+            <h2 class="our__subtitle">Descubra cómo nuestras soluciones integradas trabajan conjuntamente para transformar sus operaciones comerciales e impulsar un crecimiento sin precedentes.</h2>
+        </div>
+        <div class="our__cards">
+            {missionData.map((card) => <CardOurs {...card}/>)}
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.our{
+    @apply w-full;
+
+    &__container{
+        @apply p-16;
+    }
+
+    &__information{
+        @apply text-center px-40 mb-16;
+    }
+
+    &__title{
+        @apply text-title text-5xl font-bold mb-6;
+    }
+
+    &__subtitle{
+        @apply text-subtitle text-xl font-medium;
+    }
+
+    &__cards{
+        @apply grid grid-cols-3 gap-10;
+    }
+}
+
+</style>
