@@ -1,0 +1,56 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+    icon: ImageMetadata;
+    title: string;
+    text: string;
+}
+
+const { icon, title, text } = Astro.props;
+---
+
+<article class="ready">
+    <div class="ready__container">
+        <div class="ready__icon-container">
+            <div class="ready__icon">
+                <Image src={icon} alt="icon" />
+            </div>
+        </div>
+        <div class="ready__information">
+            <h1 class="ready__title">{title}</h1>
+            <p class="ready__text">{text}</p>
+        </div>
+    </div>
+</article>
+
+<style lang="scss">
+  @reference '@styles/global';
+
+  .ready{
+    &__container{
+      @apply p-4 rounded-xl h-full;
+    }
+
+    &__icon-container{
+        @apply flex justify-center;
+    }
+
+    &__icon{
+        @apply bg-white rounded-full w-fit p-5 mb-4;
+    }
+
+    &__information{
+        @apply text-white;;
+    }
+
+    &__title{
+        @apply md:text-lg font-bold mb-2 text-white text-center;
+    }
+    &__text{
+        @apply text-base font-medium text-white text-center;
+    }
+
+  }
+</style>

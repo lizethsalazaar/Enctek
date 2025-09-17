@@ -1,0 +1,1 @@
+export { default as CardReady} from './ready_card.astro';
