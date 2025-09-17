@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    icon: ImageMetadata,
+    title: string,
+    text: string,
+}
+
+const {icon, title, text} = Astro.props
+---
+
+<article class="why">
+    <div class="why__container">
+        <div class="why__icon"><Image src={icon} alt="icon"/></div>
+        <h1 class="why__title">{title}</h1>
+        <p class="why__text">{text}</p>
+    </div>
+
+</article>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.why{
+    &__container{
+        @apply p-8 bg-white rounded-2xl h-full transform shadow-xl/10 hover:shadow-xl/30 duration-300 ;
+    }
+
+    &__icon{
+        @apply mb-4 bg-why4 rounded-xl w-fit p-5;
+    }
+
+    &__title{
+        @apply text-xl text-title font-bold mb-4;
+    }
+
+    &__text{
+        @apply text-base text-subtitle mb-4;
+    }
+
+    &__list{
+        @apply mb-2;
+    }
+}
+</style>

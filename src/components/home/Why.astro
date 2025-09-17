@@ -1,0 +1,110 @@
+---
+import { CardWhy } from "./why_card";
+import RayIcon from "@icons/ray.svg";
+import RealIcon from "@icons/real-time.svg";
+import DeviceIcon from "@icons/device.svg";
+import DataIcon from "@icons/database.svg";
+import RiskIcon from "@icons/risk.svg";
+import IconAI from "@icons/ai.svg";
+
+const missionData = [
+    {
+        icon: RayIcon,
+        title: "Soluciones Integradas",
+        text: "Plataforma unificada que conecta a la perfección todos sus canales de comunicación para lograr la máxima eficiencia y coherencia.",
+    },
+    {
+        icon: RealIcon,
+        title: "Escalabilidad",
+        text: "Soluciones que crecen con su negocio, desde la puesta en marcha hasta la empresa, sin comprometer el rendimiento ni la calidad.",
+    },
+    {
+        icon: DeviceIcon,
+        title: "Asistencia de Expertos",
+        text: "Equipo dedicado de profesionales que brinda asistencia las 24/7 y orientación estratégica para su éxito.",
+    },
+    {
+        icon: DataIcon,
+        title: "Resultados Basados en Datos",
+        text: "Rendimiento optimizado gracias a análisis avanzados y conocimientos que impulsan resultados empresariales cuantificables.",
+    },
+    {
+        icon: RiskIcon,
+        title: "Rentabilidad",
+        text: "Maximice el retorno de la inversión con soluciones eficientes que reducen los costes operativos y mejoran el rendimiento.",
+    },
+    {
+        icon: IconAI,
+        title: "Tecnología de Vanguardia",  
+        text: "Manténgase por delante de la competencia con las últimas innovaciones y tecnologías emergentes en comunicación.",
+    },                
+]
+---
+
+<section class="why">
+    <div class="why__container">
+        <div class="why__information">
+            <h1 class="why__title">¿Por qué elegir ConnectPro?</h1>
+            <h2 class="why__subtitle">Experimente la diferencia con nuestro enfoque integral de las soluciones tecnológicas y de comunicación empresarial.</h2>
+        </div>
+        <div class="why__cards">
+            {missionData.map((card) => <CardWhy {...card}/>)}
+        </div>
+        <div class="why__ready">
+            <div class="why__ready-container">
+                <h1 class="why__ready-title">¿Listo para transformar tu negocio?</h1>
+                <h2 class="why__ready-subtitle">Únase a miles de empresas que ya se benefician de nuestras soluciones integradas.</h2>
+                <button class="why__button-start">Comience hoy mismo su prueba gratuita</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.why{
+    @apply w-full bg-bg;
+
+    &__container{
+        @apply p-16;
+    }
+
+    &__information{
+        @apply text-center md:px-40 mb-16;
+    }
+
+    &__title{
+        @apply text-title md:text-5xl font-bold mb-6;
+    }
+
+    &__subtitle{
+        @apply text-subtitle text-xl font-medium;
+    }
+
+    &__cards{
+        @apply grid  grid-cols-1 md:grid-cols-3 gap-8 mb-16;
+    }
+
+    &__ready{
+        @apply bg-gradient-to-r from-span-communication to-span-solution rounded-3xl;
+    }
+
+    &__ready-container{
+        @apply p-10 text-center text-white;
+    }
+
+    &__ready-title{
+        @apply text-3xl font-bold mb-4;
+    }
+
+    &__ready-subtitle{
+        @apply text-xl font-medium mb-8;
+    }
+
+    &__button-start{
+        @apply bg-white text-span-communication font-semibold py-5 px-6 rounded-full cursor-pointer transform hover:bg-blue-50 transition-all duration-300;
+    }
+}
+
+</style>

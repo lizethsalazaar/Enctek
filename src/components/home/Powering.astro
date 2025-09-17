@@ -38,9 +38,7 @@ import Img1 from '@images/img1.png'
         </div>
         <div class="powering__image">
             <div class="powering__image-container">
-                <div class="powering__circle1"></div>
                 <div> <Image src={Img1} alt="statistics" /></div>
-                <div class="powering__circle2"></div>
             </div>
         </div>
     </div>
@@ -53,7 +51,7 @@ import Img1 from '@images/img1.png'
     @apply w-full;
 
     &__container{
-        @apply bg-bg grid grid-cols-2 p-16;
+        @apply bg-bg grid grid-cols-1 md:grid-cols-2 p-16;
     }
 
     &__trusted{
@@ -65,7 +63,7 @@ import Img1 from '@images/img1.png'
     }
 
     &__title{
-        @apply  text-title text-7xl font-[950] mb-10;
+        @apply  text-title md:text-7xl font-[950] mb-10;
     }
 
     &__span-solutions{
