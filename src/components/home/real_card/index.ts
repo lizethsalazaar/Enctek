@@ -1,0 +1,1 @@
+export { default as CardReal} from './real_card.astro'

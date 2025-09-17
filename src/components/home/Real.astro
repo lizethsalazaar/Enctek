@@ -1,0 +1,78 @@
+---
+import { CardReal } from "./real_card";
+import DeviceIcon from '@icons/device.svg';
+import PadlockIcon from '@icons/padlock.svg'
+import Img1 from '@images/img8.png';
+import Img2 from '@images/img9.png';
+import { sequence } from "astro:middleware";
+
+const missionData = [
+    {
+        icon: DeviceIcon,
+        title: "RetailMax Solutions",
+        subtitle: "E-commerce & Retail",
+        image: Img1,
+        option1: "Satisfacción del  Cliente",
+        span1: "+65%",
+        option2: "Tiempo de Respuesta",
+        span2: "-80%",
+        option3: "Crecimiento de los Ingresos",
+        span3: "+120%",
+        text: "RetailMax transformó la experiencia de sus clientes mediante la implementación de nuestras soluciones integradas de centro de llamadas y marketing por email. El resultado fue un crecimiento sin precedentes en la satisfacción de los clientes y los ingresos.",
+    },
+      {
+        icon: PadlockIcon,
+        title: "HealthCare Plus",
+        subtitle: "Healthcare & Medical",
+        image: Img2,
+        option1: "Compromiso de los Pacientes",
+        span1: "+90%",
+        option2: "Eficiencia en las Citas",
+        span2: "+75%",
+        option3: "Reducción de Costes",
+        span3: "-45%",
+        text: "HealthCare Plus revolucionó la comunicación con los pacientes gracias a nuestro software personalizado y nuestros sistemas automatizados de correo electrónico, lo que se tradujo en una mejora de los resultados de los pacientes y de la eficiencia operativa.",
+    },
+]
+---
+
+<section class="real">
+    <div class="real__container">
+        <div class="real__information">
+            <h1 class="real__title">Resultados Reales. Historias Reales.</h1>
+            <h2 class="real__subtitle">Descubra cómo nuestros clientes lograron transformaciones notables y éxitos cuantificables con nuestras soluciones integradas.</h2>
+        </div>
+        <div class="real__cards">
+            {missionData.map((card) => ( <CardReal {...card}/>))}	
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.real{
+    @apply w-full;
+
+    &__container{
+        @apply bg-bg p-16;
+    }
+
+    &__information{
+        @apply text-center md:px-40 mb-16;
+    }
+
+    &__title{
+        @apply text-title md:text-5xl font-bold mb-6;
+    }
+
+    &__subtitle{
+        @apply text-subtitle text-xl font-medium;
+    }
+
+    &__cards{
+        @apply grid grid-cols-1 md:grid-cols-2 gap-12;
+    }
+}
+
+</style>
