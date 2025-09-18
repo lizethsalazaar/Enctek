@@ -38,7 +38,9 @@ import Img1 from '@images/img1.png'
         </div>
         <div class="powering__image">
             <div class="powering__image-container">
+                <div class="powering__circle1"></div>
                 <div> <Image src={Img1} alt="statistics" /></div>
+                <div class="powering__circle2"></div>
             </div>
         </div>
     </div>
@@ -115,7 +117,11 @@ import Img1 from '@images/img1.png'
     }
 
     &__image{
-        @apply items-center;
+        @apply relative flex justify-center items-center transform transition hover:scale-105;
+    }
+
+    &__image-container{
+        @apply relative;
     }
 
     &__divider{
@@ -123,11 +129,11 @@ import Img1 from '@images/img1.png'
     }
 
     &__circle1{
-        @apply w-30 h-30 bg-span-communication/20 rounded-full right-14 absolute;
+        @apply w-10 h-10 md:w-40 md:h-40 bg-span-communication/20 rounded-full left-40 md:left-116 md:bottom-125 absolute;
     }
 
     &__circle2{
-        @apply w-30 h-30 bg-span-communication/20 rounded-full left-166 bottom-1 absolute;
+        @apply w-10 h-10 md:w-30 md:h-30 bg-span-solution/20 rounded-full left-2 bottom-5 absolute;
     } 
 
 }   
