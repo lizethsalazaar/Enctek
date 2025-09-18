@@ -1,0 +1,1 @@
+export { default as CardWhy} from './why_card.astro'

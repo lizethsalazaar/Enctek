@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    icon: ImageMetadata,
+    title: string,
+    text: string,
+    option1: string,
+    option2: string,
+    option3: string,
+    option4: string,
+    option5: string,
+    image: ImageMetadata,
+    button: string,
+}
+
+const {icon, title, text, option1, option2, option3, option4, option5, image, button} = Astro.props
+---
+
+<article class="our">
+    <div class="our__container">
+        <div class="our__icon"><Image src={icon} alt="icon"/></div>
+        <h1 class="our__title">{title}</h1>
+        <p class="our__text">{text}</p>
+        <ul class="our__list">
+            <li class="our__options">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="our__icon-check"><path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/></svg>{option2}
+            </li>
+            <li class="our__options">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="our__icon-check"><path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/></svg>{option3}
+            </li>
+            <li class="our__options">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="our__icon-check"><path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/></svg>{option1}</li>
+            <li class="our__options">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="our__icon-check"><path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/></svg>{option4}</li>
+            <li class="our__options">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="our__icon-check"><path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/></svg>{option5}</li>
+        </ul>
+        <div class="our__image">
+            <Image src={image} alt="service" />
+        </div>
+        <button class="our__button">{button}</button>
+    </div>
+</article>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.our{
+    &__container{
+        @apply p-8 bg-bg-trusted rounded-3xl h-full transform hover:scale-105 transition-all hover:shadow-xl/30 duration-300 ;
+    }
+
+    &__icon{
+        @apply mb-4 bg-blue-50 rounded-2xl w-fit p-5;
+    }
+
+    &__title{
+        @apply md:text-2xl text-title font-bold mb-4;
+    }
+
+    &__text{
+        @apply text-base text-subtitle mb-4;
+    }
+
+    &__list{
+        @apply mb-2;
+    }
+
+    &__options{
+        @apply text-base text-subtitle mb-4 inline-flex gap-2;
+    }
+
+    &__icon-check{
+        @apply text-span-communication;
+    }
+
+    &__image{
+        @apply flex justify-center items-center mb-6;
+    }
+
+    &__button{
+        @apply bg-span-communication text-base font-semibold text-white py-2 px-4 rounded-full w-full cursor-pointer transform hover:bg-blue-900;
+    }
+}
+
+</style>

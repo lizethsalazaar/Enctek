@@ -1,0 +1,102 @@
+---
+import { CardTransparent } from "./transparent_card";
+
+const missionData = [
+    {
+        title: "Principiante",
+        subtitle: "Perfecto para pequeñas empresas",
+        span: "$299",
+        text: "/mes",
+        option1: "Hasta 100 llamadas/mes",
+        option2: "5000 correos electrónicos/mes",
+        option3: "Integración CRM básica",
+        option4: "Asistencia por correo electrónico",
+        option5: "Análisis básicos cada mes",
+        option6: "Asistencias",
+        button: "Empezar",
+    },
+    {
+        title: "Profesional",
+        subtitle: "Ideal para empresas en crecimiento",
+        span: "$699",
+        text: "/mes",
+        option1: "Hasta 500 llamadas al mes",
+        option2: "25 000 envíos de correo electrónico/mes",
+        option3: "Integración avanzada con CRM",
+        option4: "Asistencia telefónica prioritaria",
+        option5: "Análisis y generación de informes avanzados",
+        option6: "Módulos de software personalizados",
+        button: "Iniciar Prueba Gratuita",
+    },
+    {
+        title: "Empresa",
+        subtitle: "Para grandes organizaciones",
+        span: "Personalizado",
+        text: "Contáctenos",
+        option1: "Llamadas ilimitadas",
+        option2: "Envío ilimitado de correos electrónicos",
+        option3: "Paquete completo de software personalizado",
+        option4: "Gerente de cuenta dedicado",
+        option5: "Asistencia telefónica 24/7",
+        option6: "Integraciones personalizadas",
+        button: "Contactar con Ventas",
+    },
+]
+---
+
+<section class="transparent">
+    <div class="transparent__container">
+        <div class="transparent__information">
+            <h1 class="transparent__title">Precios Transparentes para Todas las Empresas</h1>
+            <h2 class="transparent__subtitle">Elija el plan perfecto que se adapte a las necesidades de su empresa. Todos los planes incluyen nuestras funciones básicas y asistencia dedicada.</h2>
+        </div>
+        <div class="transparent__cards">
+            {missionData.map((card) => ( <CardTransparent {...card}/>))}
+        </div>
+        <div class="transparent__text">
+            <p class="transparent__text-all">Todos los planes incluyen una prueba gratuita de 30 días. Sin cuotas de instalación. Cancela en cualquier momento.</p>
+            <button class="transparent__button-compare">Compara todas las funciones →</button>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.transparent{
+    @apply w-full;
+
+    &__container{
+        @apply bg-white p-16;
+    }
+
+    &__information{
+        @apply text-center md:px-40 mb-12;
+    }
+
+    &__title{
+        @apply text-title md:text-5xl font-bold mb-6;
+    }
+
+    &__subtitle{
+        @apply text-subtitle text-xl font-medium;
+    }
+
+    &__cards{
+        @apply grid grid-cols-1 md:grid-cols-3 gap-6 mb-12;
+    }
+
+    &__text{
+        @apply text-center;
+    }
+
+    &__text-all{
+        @apply text-subtitle text-base mb-6;
+    }
+
+    &__button-compare{
+        @apply text-span-communication font-semibold transition hover:text-blue-800 cursor-pointer;
+    }
+}
+
+</style>

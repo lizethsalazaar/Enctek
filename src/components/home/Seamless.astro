@@ -1,0 +1,82 @@
+---
+import { CardSeamless } from "./seamless_card";
+
+import Img1 from '@images/img10.png';
+import Img2 from '@images/img11.png';
+import Img3 from '@images/img12.png';
+import Img4 from '@images/img13.png';
+import Img5 from '@images/img14.png';
+import Img6 from '@images/img15.png';
+
+const missionData = [
+    {
+        image: Img1,
+    },
+    {
+        image: Img2,
+    },
+    {
+        image: Img3,
+    },
+    {
+        image: Img4,
+    },
+    {
+        image: Img5,
+    },
+    {
+        image: Img6,
+    },
+]
+---
+
+<section class="seamless">
+    <div class="seamless__container">
+        <div class="seamless__information">
+            <h1 class="seamless__title">Integraciones Perfectas</h1>
+            <h2 class="seamless__subtitle">Conéctese con las herramientas que ya utiliza. Nuestra plataforma se integra con más de 100 aplicaciones empresariales populares.</h2>
+        </div>
+        <div class="seamless__cards">
+            {missionData.map((card) => ( <CardSeamless {...card}/>))}	
+        </div>
+        <div class="seamless__button">
+            <button class="seamless__button-view">Ver Todas las Integraciones</button>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+@reference '@styles/global';
+
+.seamless{
+    @apply w-full;
+
+    &__container{
+        @apply bg-white p-16;
+    }
+
+    &__information{
+        @apply text-center md:px-40 mb-16;
+    }
+
+    &__title{
+        @apply text-title md:text-5xl font-bold mb-6;
+    }
+
+    &__subtitle{
+        @apply text-subtitle text-xl font-medium;
+    }
+
+    &__cards{
+        @apply grid grid-cols-1 md:grid-cols-6 gap-6 mb-8;
+    }
+
+    &__button{
+        @apply text-center text-base text-white;
+    }
+
+    &__button-view{
+        @apply bg-span-communication py-4 px-8 rounded-full font-semibold transition hover:bg-blue-800 cursor-pointer;
+    }
+}
+</style>

@@ -1,0 +1,142 @@
+---
+import { CardGet } from "./get_card";
+
+import DeviceIcon from '@icons/device.svg';
+import PaymentsIcon from '@icons/payments.svg';
+import LocationIcon from '@icons/location.svg'
+
+const missionData = [
+    {
+        icon: DeviceIcon,
+        title: "Asistencia Telefónica",
+        text: "Hable directamente con nuestros expertos.",
+        span: "+1 (555) 123-4567"
+    },
+    {
+        icon: PaymentsIcon,
+        title: "Asistencia por Correo Electrónico",
+        text: "Envíenos sus preguntas en cualquier momento.",
+        span: "hello@connectpro.com"
+    },
+    {
+        icon: LocationIcon,
+        title: "Ubicación de la Oficina",
+        text: "Visítenos para consultas en persona.",
+        span: "123 Business Ave, Suite 100 \n San Francisco, CA 94105"
+    },
+]
+---
+
+<section class="get">
+    <div class="get__container">
+        <div class="get__information">
+            <h1 class="get__title">Póngase en Contacto con Nosotros</h1>
+            <h2 class="get__subtitle">¿Está listo para hablar sobre sus necesidades específicas? Nuestro equipo de expertos está aquí para ayudarle a encontrar la solución perfecta para su negocio.</h2>
+        </div>
+        <div class="get__text">
+            <div class="get__text-information">
+                {missionData.map((card) => ( <CardGet {...card}/>))}
+            </div>
+            <div class="get__form">
+                <form class="get__form-container">
+                    <div class="get__form-name">
+                        <div class="get__form-field">
+                            <label class="get__form-title">Nombre</label>
+                            <input type="text" placeholder="John" class="get__form-subtitle"/>
+                        </div>
+                        <div class="get__form-field">
+                            <label class="get__form-title">Apellido</label>
+                            <input type="text" placeholder="Doe" class="get__form-subtitle"/>
+                        </div>
+                    </div>
+                    
+                    <div class="get__form-field">
+                        <label class="get__form-title">Correo Electrónico</label>
+                        <input type="email" placeholder="john@company.com" class="get__form-subtitle"/>
+                    </div>
+                    
+                    <div class="get__form-field">
+                        <label class="get__form-title">Nombre de la Empresa</label>
+                        <input type="text" placeholder="Tu Empresa" class="get__form-subtitle"/>
+                    </div>
+
+                    <div class="get__form-field"> 
+                        <label class="get__form-title">Servicios que le Interesan</label>
+                        <select class="get__form-subtitle form-subtitle__select">
+                            <option>Soluciones para Centros de Llamadas</option>
+                            <option>Desarrollo de Software</option>
+                            <option>Consultoría Informática</option>
+                        </select>
+                    </div>
+                    
+                    <div class="get__form-field">
+                        <label class="get__form-title">Mensaje</label>
+                        <textarea placeholder="Cuéntanos Sobre tu Proyecto...." rows="4" class="get__form-subtitle"></textarea>
+                    </div>
+                
+                    <button type="submit" class="get__button-send">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   
+<style lang="scss">
+@reference '@styles/global';
+
+.get{
+    @apply w-full;
+
+    &__container{
+        @apply bg-bg p-16;
+    }
+
+    &__information{
+        @apply text-center md:px-40 mb-16;
+    }
+
+    &__title{
+        @apply text-title md:text-5xl font-bold mb-6;
+    }
+
+    &__subtitle{
+        @apply text-subtitle text-xl font-medium;
+    }
+
+    &__text{
+        @apply grid grid-cols-1 md:grid-cols-2;
+    }
+
+    &__form-container{
+        @apply bg-white p-8 rounded-3xl shadow-xl;
+    }
+
+    &__form-field{
+        @apply mb-3;
+    }
+
+    &__form-name{
+        @apply grid grid-cols-2 gap-4;
+    }
+
+    &__form-title{
+        @apply block text-base text-title font-bold mb-2;
+    }
+
+    &__form-subtitle{
+        @apply text-base text-subtitle border-1 border-bg mb-4 rounded-xl py-3 px-4 mt-1 w-full;
+
+        &.form-subtitle__select{
+            @apply bg-bg border-gray-300 text-title;
+        }
+    }
+
+    &__button-send{
+        @apply bg-span-communication text-white text-xl font-bold w-full rounded-xl py-4 cursor-pointer transform hover:bg-blue-800;
+    }
+}
+    
+
+</style>

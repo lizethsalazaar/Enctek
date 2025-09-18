@@ -20,6 +20,7 @@ import Img1 from '@images/img1.png'
                 <button class="powering__button-request">Solicitar  una demostración</button>
                 <button class="powering__button-schedule">Programar una llamada</button>
             </div>
+            <hr class="powering__divider"/>
             <div class="powering__options">
                 <div class="powering__customers">
                     <h1 class="powering__title-customer">30%</h1>
@@ -36,7 +37,11 @@ import Img1 from '@images/img1.png'
             </div>
         </div>
         <div class="powering__image">
-            <Image src={Img1} alt="statistics" />
+            <div class="powering__image-container">
+                <div class="powering__circle1"></div>
+                <div> <Image src={Img1} alt="statistics" /></div>
+                <div class="powering__circle2"></div>
+            </div>
         </div>
     </div>
 </section>
@@ -48,11 +53,11 @@ import Img1 from '@images/img1.png'
     @apply w-full;
 
     &__container{
-        @apply bg-bg grid grid-cols-2 p-16;
+        @apply bg-bg grid grid-cols-1 md:grid-cols-2 p-16;
     }
 
     &__trusted{
-        @apply bg-bg-trusted w-fit px-8 py-2 rounded-3xl mb-10;
+        @apply bg-bg-trusted w-fit px-8 py-2 rounded-3xl mb-8;
     }
 
     &__trusted-text{
@@ -60,7 +65,7 @@ import Img1 from '@images/img1.png'
     }
 
     &__title{
-        @apply text-7xl font-[950] mb-10;
+        @apply  text-title md:text-7xl font-[950] mb-10;
     }
 
     &__span-solutions{
@@ -76,15 +81,15 @@ import Img1 from '@images/img1.png'
     }
 
     &__buttons{
-        @apply grid grid-cols-[3fr_3fr_1fr] gap-2 font-bold mb-8;
+        @apply grid grid-cols-[3fr_3fr_1fr] gap-4 font-bold mb-8;
     }
 
     &__button-request{
-        @apply py-4 rounded-4xl bg-span-communication border border-none text-white cursor-pointer text-base;
+        @apply py-4 rounded-4xl bg-span-communication border border-none text-white cursor-pointer text-base transform hover:scale-105 transition-all hover:shadow-xl/30 duration-300;
     }
 
     &__button-schedule{
-        @apply py-4 rounded-4xl bg-bg border-2 border-gray-400 cursor-pointer text-base;
+        @apply py-4 rounded-4xl bg-bg border-2 border-gray-400 cursor-pointer text-base transform hover:scale-105 transition-all duration-300;
     }
 
     &__options{
@@ -112,9 +117,25 @@ import Img1 from '@images/img1.png'
     }
 
     &__image{
-        @apply  items-center transform translate-y-5;
+        @apply relative flex justify-center items-center transform transition hover:scale-105;
     }
 
-}
+    &__image-container{
+        @apply relative;
+    }
+
+    &__divider{
+        @apply border-t border-gray-300 mb-4 col-span-2;
+    }
+
+    &__circle1{
+        @apply w-10 h-10 md:w-40 md:h-40 bg-span-communication/20 rounded-full left-40 md:left-116 md:bottom-125 absolute;
+    }
+
+    &__circle2{
+        @apply w-10 h-10 md:w-30 md:h-30 bg-span-solution/20 rounded-full left-2 bottom-5 absolute;
+    } 
+
+}   
 
 </style>

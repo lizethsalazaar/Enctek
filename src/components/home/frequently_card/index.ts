@@ -1,0 +1,1 @@
+export { default as CardFrequently} from './frequently_card.astro'

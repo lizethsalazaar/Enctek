@@ -1,0 +1,101 @@
+---
+interface Props {
+    title: string;
+    subtitle: string;
+    span: string;
+    text: string;
+    option1: string;
+    option2: string;
+    option3: string;
+    option4: string;
+    option5: string;
+    option6: string;
+    button: string;
+}
+
+const { title, subtitle, span, text, option1, option2, option3, option4, option5, option6, button } = Astro.props;
+---
+
+<article class="transparent">
+    <div class="transparent__container">
+        <div class="transparent__information">
+            <h1 class="transparent__title">{title}</h1>
+            <h2 class="transparent__subtitle">{subtitle}</h2>
+            <p class="transparent__span">{span}</p>
+            <p class="transparent__text">{text}</p>
+        </div>
+        <div class="transparent__list">
+            <ul>
+                <li class="transparent__option">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>
+                    {option1}
+                </li> 
+                <li class="transparent__option">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>
+                    {option2}
+                </li>
+                <li class="transparent__option">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>
+                    {option3}
+                </li>
+                <li class="transparent__option">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>
+                    {option4}
+                </li>
+                <li class="transparent__option">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>
+                    {option5}
+                </li>
+                <li class="transparent__option">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>
+                    {option6}
+                </li>
+            </ul>
+        </div>
+        <div class="transparent__button">
+            <button class="transparent__button-card">{button}</button>
+        </div>
+    </div>
+</article>
+
+<style lang="scss">
+  @reference '@styles/global';
+
+  .transparent{
+    &__container{
+      @apply bg-span-communication p-10 h-full rounded-3xl text-white shadow-xl/20 transform transition hover:translate-y-2 hover:shadow-xl/30 duration-300;
+    }
+
+    &__information{
+        @apply text-center mb-4;
+    }
+
+    &__title{
+        @apply text-2xl font-bold mb-3;
+    }
+
+    &__subtitle{
+        @apply text-base mb-6;
+    }
+
+    &__span{
+        @apply md:text-5xl font-bold mb-2;
+    }
+
+    &__text{
+        @apply text-base mb-10;
+    }
+
+    &__list{
+        @apply mb-6;
+    }
+    
+    &__option{
+        @apply text-base mb-4 inline-flex gap-2;
+    }
+    
+    &__button-card{
+        @apply bg-white text-base text-center w-full text-span-communication font-bold  py-3 rounded-full transform hover:bg-blue-50 cursor-pointer;
+    }
+  }
+</style>

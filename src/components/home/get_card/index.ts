@@ -1,0 +1,1 @@
+export { default as CardGet} from './get_card.astro';
